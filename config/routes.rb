@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
   get 'dashboard' => 'welcome#dashboard'
   get 'messages' => 'welcome#messages'
+  get 'tournaments' => 'welcome#tournaments'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

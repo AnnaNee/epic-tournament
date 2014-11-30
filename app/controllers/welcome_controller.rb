@@ -9,4 +9,7 @@ class WelcomeController < ApplicationController
   def messages
   end
 
+  def tournaments
+  end
+
 end
