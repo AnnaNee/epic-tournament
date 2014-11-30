@@ -14,6 +14,10 @@ $opensans: "Open Sans", Helvetica, Sans
   &:hover
     color: #FF7101
 
+.link.active
+  text-decoration: underline
+  color: #FF7101
+
 .borderless
   border: 0
 
@@ -40,6 +44,15 @@ body
   &:hover
     background-color: lighten(#999999, 20%)
     color: #fff
+
+.badge
+  background-color: #009e90
+
+a
+  cursor: pointer
+
+h1, h2, h3, h4, h5, h6
+  color: #999
 
 // Navbar
 .navbar-default
@@ -94,6 +107,7 @@ body
 .messages
   margin: 15px 0
   .inner
+    width: 92%
     .info
       margin-bottom: 15px
       .date
@@ -117,9 +131,14 @@ body
       &:hover
         color: #747474
 
-.timeline .messages .inner
-  width: 92%
+#messages .messages .inner
+  width: 100%
 
+// Messages
+.replies
+  .info
+    border-top: 1px solid #ccc
+    padding-top: 10px
 // Messages Modal
 #messages .modal-header
   border: 0

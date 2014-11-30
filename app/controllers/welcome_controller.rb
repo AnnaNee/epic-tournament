@@ -6,4 +6,7 @@ class WelcomeController < ApplicationController
   def dashboard
   end
 
+  def messages
+  end
+
 end

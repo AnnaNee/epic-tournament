@@ -1,0 +1,62 @@
+.container
+  .row
+    .col-md-12.text-center
+      %h2 Mensagens
+      = image_tag "div.jpg"
+  .row
+    .col-md-12
+      = link_to "#" do
+        %a.link.active
+          Todos
+        %span.badge 27
+      = link_to "#" do
+        %a.link
+          Usuários
+        %span.badge 101
+      = link_to "#" do
+        %a.link
+          Sistema
+        %span.badge 0
+  .row
+    .col-md-12
+      .messages
+        .inner.pull-left
+          .info
+            = image_tag "avatar.jpg", class: "pull-left img-responsive avatar"
+            %small Anna Flávia
+            %br
+            %small.date 21/02/2011 às 14h
+          .message-inner
+            .message
+              %p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse.
+            .replies
+              #messages.panel-collapse.collapse{ role: "tabpanel", "aria-labelledby" => "headingOne"  }
+                .info
+                  = fa_icon "mail-forward", class: "link"
+                  = image_tag "avatar.jpg", class: "pull-left img-responsive avatar"
+                  %small Anna Flávia
+                  %br
+                  %small.date 21/02/2011 às 14h
+                .message
+                  %p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse.
+              - 5.times do
+                #messages.panel-collapse.collapse{ role: "tabpanel", "aria-labelledby" => "headingOne"  }
+                  .info
+                    = fa_icon "mail-forward", class: "link"
+                    = image_tag "avatar.jpg", class: "pull-left img-responsive avatar"
+                    %small Anna Flávia
+                    %br
+                    %small.date 21/02/2011 às 14h
+                  .message
+                    %p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse.
+            .message-replies.pull-right
+              %small
+                %a.collapsed.link{ data: { toggle: "collapse", parent: "#accordion"  }, href: "#messages", aria: { expanded: "true", controls: "#messages"  } } Expandir conversa
+            .clearfix
+            .message-reply
+              %textarea.form-control.borderless{ rows: "1", type: "textarea", placeholder: "Responder..." }
+        .message-opts.pull-left
+          = link_to fa_icon("comment"), "#messages", title: "Expandir Conversa", data: { toggle: "modal", target: "#messages"  }
+          %br
+          = link_to fa_icon("trash"), "#", title: "Excluir"
+        .clearfix
