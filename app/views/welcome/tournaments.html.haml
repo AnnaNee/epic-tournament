@@ -1,8 +1,8 @@
 .container
   .row
     .col-md-12.text-center
-      %h2 Torneios
-      = image_tag "div.jpg"
+      %h2 Torneio: Fábrica de Monstro
+      = image_tag "div.png"
   .row
     .col-md-8.col-md-offset-2.text-center
       %br
@@ -74,3 +74,79 @@
       .inner
         %strong Outras regras:
         %p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse.
+  .row
+    .col-md-12
+      .btn-group.pull-right
+        = link_to "Inscrever-se", "#subscribe", class: "btn btn-success btn-md", title: "Inscreva-se", data: { toggle: "modal", target: "#subscribe"  }
+  %br
+
+#subscribe.modal.fade{ tabindex: "-1", role: "dialog", "aria-labelledby" => "subscribeLabel"  }
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close{"data-dismiss" => "modal", :type => "button"}
+          %span{"aria-hidden" => "true"} ×
+          %span.sr-only Close
+        .modal-title.uppercase
+          %h3 Inscrição
+      .modal-body
+        .form
+          .row
+            .col-md-6
+              .form-group
+                %input.form-control{ type: "name", placeholder: "Nome"  }
+              .form-group
+                %input.form-control{ type: "number", placeholder: "Telefone"  }
+              .form-group
+                %input.form-control{ type: "ign", placeholder: "IGN"  }
+              .form-group
+                %input.form-control{ type: "state", placeholder: "Estado"  }
+            .col-md-6
+              .form-group
+                %input.form-control{ type: "email", placeholder: "E-mail"  }
+              .form-group
+                %input.form-control{ type: "fc", placeholder: "Friend-code"  }
+              .form-group
+                %input.form-control{ type: "country", placeholder: "País"  }
+              .form-group
+                %input.form-control{ type: "city", placeholder: "Cidade"  }
+            .clearfix
+          .row
+            .col-md-10
+              .form-group
+                %input.form-control{ type: "adress", placeholder: "Endereço"  }
+            .col-md-2
+              .form-group
+                %input.form-control{ type: "number", placeholder: "Nº"  }
+          .row
+            .col-md-12
+              %h4 Data disponível para batalhas
+            .clearfix
+            .col-md-12
+              %h6 Selecione os dias disponíveis:
+              %input.hide{ type: "checkbox", value: "monday", id: "monday"  }
+                %label{ for: "monday"  } SEG
+              %input.hide{ type: "checkbox", value: "tuesday", id: "tuesday"  }
+                %label{ for: "tuesday"  } TER
+              %input.hide{ type: "checkbox", value: "wednesday", id: "wednesday"  }
+                %label{ for: "wednesday"  } QUA
+              %input.hide{ type: "checkbox", value: "thursday", id: "thursday"  }
+                %label{ for: "thursday"  } QUI
+              %input.hide{ type: "checkbox", value: "friday", id: "friday"  }
+                %label{ for: "friday"  } SEX
+              %input.hide{ type: "checkbox", value: "saturday", id: "saturday"  }
+                %label{ for: "saturday"  } SÁB
+              %input.hide{ type: "checkbox", value: "sunday", id: "sunday"  }
+                %label{ for: "sunday"  } DOM
+          .row
+            .col-md-12
+              %h6 Selecione os horários disponíveis nos dias escolhidos:
+            .col-md-6
+              .form-group
+                %input.form-control{ type: "number", placeholder: "Entre: ex.: 18h00"  }
+            .col-md-6
+              .form-group
+                %input.form-control{ type: "number", placeholder: "Às: ex.: 21h30"  }
+          .row
+            .col-md-12
+              = link_to "Inscrever-se", "#subscribe", class: "btn btn-success btn-md pull-right", title: "Inscreva-se", data: { toggle: "modal", target: "#subscribe"  }
