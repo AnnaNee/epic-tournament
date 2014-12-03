@@ -12,4 +12,10 @@ class WelcomeController < ApplicationController
   def tournaments
   end
 
+  def create_tournament
+  end
+
+  def my_tournaments
+  end
+
 end
