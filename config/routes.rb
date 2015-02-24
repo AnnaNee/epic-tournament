@@ -1,14 +1,16 @@
 Rails.application.routes.draw do
+  devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   root 'welcome#index'
-  get 'dashboard' => 'welcome#dashboard'
-  get 'messages' => 'welcome#messages'
-  get 'tournaments' => 'welcome#tournaments'
-  get 'create_tournament' => 'welcome#create_tournament'
-  get 'my_tournaments' => 'welcome#my_tournaments'
+  get 'dashboard' => 'dashboard#dashboard'
+  get 'messages' => 'dashboard#messages'
+  get 'tournaments' => 'dashboard#tournaments'
+  get 'create_tournament' => 'dashboard#create_tournament'
+  get 'my_tournaments' => 'dashboard#my_tournaments'
+  get 'profile' => 'dashboard#profile'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
