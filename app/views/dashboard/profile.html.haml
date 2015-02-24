@@ -1,0 +1,31 @@
+.container
+  .row.user-bar
+    .col-md-2.no-padding
+      = image_tag "avatar.jpg", class: "img-responsive avatar", alt: "Foto de Anna"
+    .col-md-10
+      %h1.no-margin.pull-left Anna Flávia
+      .online oi
+    .col-md-10
+      .insignia.hidden-xs
+        - 10.times do
+          = image_tag "http://placehold.it/15x15"
+      .menu
+        %ul.list-unstyled
+          %li
+            %small
+              = link_to "#" do
+                = fa_icon "trophy", text: "(22) Ver Troféus"
+          %li
+            %small
+              = link_to "#" do
+                = fa_icon "envelope", text: "Enviar Mensagem"
+          %li
+            %small
+              = link_to "#" do
+                = fa_icon "line-chart", text: "Ranking: #335"
+          %li
+            %small
+              = link_to "#" do
+                = fa_icon "line-chart", text: "234 seguidores"
+      .btn.btn-md.btn-success.uppercase + Seguir
+      .btn.btn-md.btn-cancel.uppercase Deixar de seguir

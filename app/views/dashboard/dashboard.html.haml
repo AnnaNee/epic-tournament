@@ -1,0 +1,104 @@
+.container
+  .row
+    .col-md-3.col-xs-5.user-bar
+      .row
+        .col-md-6.col-xs-6.no-padding-right
+          = image_tag "avatar.jpg", class: "img-responsive avatar"
+        .col-md-6.col-xs-6
+          .info
+            %h5
+              %strong= current_user.username
+            %small
+              = link_to "Editar Perfil", "#", class: "link"
+          .insignia.hidden-xs
+            - 10.times do
+              = image_tag "http://placehold.it/15x15"
+      .row
+        .col-md-12.menu
+          %li
+            %strong
+              = link_to "#" do
+                = fa_icon "list-alt", text: "News Feed"
+          %li
+            = link_to "#" do
+              = fa_icon "envelope", text: "Mensagens"
+          %li
+            = link_to "#" do
+              = fa_icon "trophy", text: "Troféus"
+          %li
+            = link_to "#" do
+              = fa_icon "star", text: "Insígnias"
+      .row
+        .col-md-12.menu
+          %h6.uppercase Minha Liga
+          %li
+            = link_to "#" do
+              = fa_icon "pencil-square-o", text: "Editar/Criar"
+          %li
+            = link_to "#" do
+              = fa_icon "calendar", text: "Agenda"
+      .row
+        .col-md-12.menu
+          %h6.uppercase Meus Torneios
+          %li
+            = link_to "#" do
+              = fa_icon "pencil-square-o", text: "Editar/Criar"
+          %li
+            = link_to "#" do
+              = fa_icon "users", text: "Agenda"
+    .col-md-9.col-xs-7
+      .inner
+        %form{ role: "role" }
+          %textarea.form-control.borderless{ type: "textarea", placeholder: "O que você tem a dizer?" }
+          %br
+          .pull-right
+            %button.btn.btn-sm.btn-cancel.uppercase{ type: "cancel", value: "Cancel"  } Cancelar
+            %button.btn.btn-sm.btn-success.uppercase{ type: "send", value: "Enviar"  } Enviar
+          .clearfix
+      .timeline
+        - 5.times do
+          .messages
+            .inner.pull-left
+              .info
+                = image_tag "avatar.jpg", class: "pull-left img-responsive avatar"
+                %small Anna Flávia
+                %br
+                %small.date 21/02/2011 às 14h
+              .message-inner
+                .message
+                  %p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse.
+                .message-likes.pull-right
+                  %small.link Fulana de tal e outras 23 pessoas curtiram isso.
+                .clearfix
+                .message-reply
+                  %textarea.form-control.borderless{ rows: "1", type: "textarea", placeholder: "Responder..." }
+            .message-opts.pull-left
+              = link_to fa_icon("comment"), "#messages", title: "Expandir Conversa", data: { toggle: "modal", target: "#messages"  }
+              = link_to fa_icon("trash"), "#", title: "Excluir"
+              = link_to fa_icon("thumbs-o-up"), "#", title: "Curtir"
+            .clearfix
+
+#messages.modal.fade{ tabindex: "-1", role: "dialog", "aria-labelledby" => "messagesLabel"  }
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close{"data-dismiss" => "modal", :type => "button"}
+          %span{"aria-hidden" => "true"} ×
+          %span.sr-only Close
+      .modal-body
+        .message-reply
+          %textarea.form-control.borderless{ rows: "1", type: "textarea", placeholder: "Responder mensagem..." }
+        - 10.times do
+          .messages
+            .inner.pull-left
+              .info
+                = image_tag "avatar.jpg", class: "pull-left img-responsive avatar"
+                %small Anna Flávia
+                %br
+                %small.date 21/02/2011 às 14h
+              .message-inner
+                .message
+                  %p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse.
+                .message-likes.pull-right
+                  %small.link Fulana de tal e outras 23 pessoas curtiram isso.
+          .clearfix
